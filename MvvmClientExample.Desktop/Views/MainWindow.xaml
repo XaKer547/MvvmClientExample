@@ -1,0 +1,25 @@
+﻿<Window x:Class="MvvmClientExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:MvvmClientExample.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button Style="{StaticResource InfoButton}" 
+                    Command="{Binding OpenOptionsCommand}"
+                    Content="Настройки"/>
+        </StackPanel>
+
+        <Frame x:Name="_navigation" Grid.Column="1"/>
+
+    </Grid>
+</Window>

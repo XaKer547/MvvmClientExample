@@ -1,0 +1,37 @@
+﻿<Page x:Class="MvvmClientExample.Views.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:viewmodels="clr-namespace:MvvmClientExample.ViewModels" xmlns:controls="clr-namespace:MvvmClientExample.Controls"
+      d:DataContext="{d:DesignInstance Type=viewmodels:RegistrationViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+    <StackPanel>
+        <DockPanel>
+            <Label Content="Логин" Margin="10,0,0,0" HorizontalContentAlignment="Right" Width="{Binding ElementName=repeatPasswordLabel, Path=ActualWidth}"/>
+            <TextBox Text="{Binding Login, Mode=TwoWay}"/>
+        </DockPanel>
+
+        <DockPanel>
+            <Label Content="Почта" Margin="10,0,0,0" HorizontalContentAlignment="Right" Width="{Binding ElementName=repeatPasswordLabel, Path=ActualWidth}"/>
+            <TextBox Text="{Binding Email, Mode=TwoWay}"/>
+        </DockPanel>
+        
+        <DockPanel>
+            <Label Content="Пароль" Margin="10,0,0,0" HorizontalContentAlignment="Right" Width="{Binding ElementName=repeatPasswordLabel, Path=ActualWidth}"/>
+            <controls:BindablePasswordBox Password="{Binding Password, Mode=TwoWay}"/>
+        </DockPanel>
+
+        <DockPanel>
+            <Label Content="Повторите пароль" Name="repeatPasswordLabel" Margin="10,0,0,0"/>
+            <controls:BindablePasswordBox Password="{Binding RepeatPassword, Mode=TwoWay}"/>
+        </DockPanel>
+
+
+        <Button Style="{StaticResource SuccessButton}" 
+                Command="{Binding RegisterCommand}"
+                Content="Зарегистрироваться" Margin="0,20"/>
+    </StackPanel>
+</Page>

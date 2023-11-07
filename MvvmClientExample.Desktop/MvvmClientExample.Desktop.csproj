@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ViewModels\Abstract\ntssxpq2.sc2~" />
+    <None Remove="Views\0subkbaa.wsd~" />
+    <None Remove="Views\Pages\OptionsPage.xaml.cs~RF9f4f24.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bootstrap.Wpf" Version="0.0.9" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="MailKit" Version="4.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="D:\pr7\MvvmClientExample.Application\MvvmClientExample.Application.csproj" />
+    <ProjectReference Include="D:\pr7\MvvmClientExample.Domain\MvvmClientExample.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

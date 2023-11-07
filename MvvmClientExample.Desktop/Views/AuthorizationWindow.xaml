@@ -1,0 +1,36 @@
+﻿<Window x:Class="MvvmClientExample.Views.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:MvvmClientExample.ViewModels"
+        d:DataContext="{d:DesignInstance viewmodels:AuthorizationViewModel}"
+        mc:Ignorable="d"
+        Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Frame NavigationUIVisibility="Hidden" Name="_navigation"/>
+
+            <Button Style="{StaticResource InlineButton}"
+                    Command="{Binding OpenRestorePasswordCommand}"
+                    Visibility="{Binding RestorePasswordButtonVisibility}"
+                    HorizontalAlignment="Right">
+                <TextBlock Text="Забыл пароль"/>
+            </Button>
+        </StackPanel>
+
+        <DockPanel Grid.Row="1" >
+             <Button Command="{Binding NavigationCommand, Mode=TwoWay}"
+               Style="{StaticResource InlineButton}"
+               HorizontalAlignment="Center">
+            <TextBlock Text="{Binding NavigationOffer, Mode=TwoWay}" TextDecorations="Underline"/>
+        </Button>
+
+        </DockPanel>
+    </Grid>
+
+</Window>
